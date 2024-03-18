@@ -1,4 +1,4 @@
-package A07;
+package a07;
 /**
  * Represents a Trail object with and id, cortocode, county, created data, last-edited date, and shape length
  * @author Shala and Yudith
