@@ -106,6 +106,10 @@ public class TrailDataReader {
 		System.out.println("\nName of county with a trail of shape length closest to but not exceeding 100: " + floorTrail.getCounty()); 
 		
 		
-		// Challenge 3
+		// Challenge 3: Use ceiling() to find the smallest key greater than or equal to 7,000. 
+		double minLength = 7000.00;
+		Integer ceilingTrailID = symbolTable.ceiling((int) minLength); 
+		TrailPathData ceilingTrail = symbolTable.get(ceilingTrailID); 
+		System.out.println("\nName of county with a trail of shape length closes but not less than 7,000: " + ceilingTrail.getCounty());
 	}	
 }
