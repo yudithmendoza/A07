@@ -84,7 +84,7 @@ public class TrailDataReader {
 		
 //		System.out.println("Symbol Table:"); 
 
-		// Challenge 1: used keys() method from ST table to look for
+		// Challenge 1: used keys() and get() methods from ST table to look for
 		// trails in Salt Lake County; 
 		String countyToSearch = "Salt Lake"; 
 		int count =0;
@@ -97,9 +97,15 @@ public class TrailDataReader {
 			}
 		}
 		System.out.println("Number of trails in " + countyToSearch + ": " + count); 
-	}
-	
-	// Challenge 2: 
-	
 		
+
+		// Challenge 2: Find the trail with a shape length closets to but not exceeding 100 using floor(). 
+		double maxLength = 100.00;
+		Integer floorTrailID = symbolTable.floor((int) maxLength);
+		TrailPathData floorTrail = symbolTable.get(floorTrailID); 
+		System.out.println("\nName of county with a trail of shape length closest to but not exceeding 100: " + floorTrail.getCounty()); 
+		
+		
+		// Challenge 3
+	}	
 }
