@@ -49,9 +49,26 @@ public class TrailPathData {
 	}
 	@Override
 	public String toString() {
-		//TODO update later
-		return "TrailPathData [objectID=" + objectID + ", cartoCode=" + cartoCode + ", county=" + county
-				+ ", createdDate=" + createdDate + ", lastEditedDate=" + lastEditedDate + ", shapeLength=" + shapeLength
-				+ "]";
+		SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy h:mm:ss a"); 
+		String CreatedDateString = "";
+		String lastEditedDateString = "";
+		
+		try {
+			Date createdDateObj = dateFormat.parse(createdDate); 
+			Date lastEditedObj = dateFormat.parse(lastEditedDate);
+			CreatedDateString = dateFormat.format(createdDateObj); 
+			lastEditedDateString = dateFormat.format(lastEditedObj);
+			
+			
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		return "OjectID: " + objectID + 
+				", CartoCode: " + cartoCode + 
+				", County: " + county +
+				", Created Date: " + CreatedDateString +
+				", Last Edited Date: " + lastEditedDateString +
+				", Shape Length: " + shapeLength; 
 	}
 }
