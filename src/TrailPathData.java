@@ -11,6 +11,7 @@ import java.util.Date;
  */
 public class TrailPathData {
 	private int objectID;
+	private String primaryName; 
 	private String cartoCode;
 	private String county;
 	private Date createdDate;
@@ -27,10 +28,11 @@ public class TrailPathData {
 	 * @param lastEditedDate2
 	 * @param shapeLength
 	 */
-	public TrailPathData(int objectID, String cartoCode, String county, Date createdDate, Date lastEditedDate,
+	public TrailPathData(int objectID, String primaryName, String cartoCode, String county, Date createdDate, Date lastEditedDate,
 			double shapeLength) {
 		super();
 		this.objectID = objectID;
+		this.primaryName = primaryName;
 		this.cartoCode = cartoCode;
 		this.county = county;
 		this.createdDate = createdDate;
@@ -46,6 +48,10 @@ public class TrailPathData {
 	 */
 	public int getObjectID() {
 		return objectID;
+	}
+	
+	public String getPrimaryName() {
+		return primaryName; 
 	}
 
 
@@ -97,13 +103,16 @@ public class TrailPathData {
 	public double getShapeLength() {
 		return shapeLength;
 	}
+	
 
 	public String toString() {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy h:mm:ss a"); 
 		String CreatedDateString = dateFormat.format(createdDate);
 		String lastEditedDateString = dateFormat.format(lastEditedDate);
-		
+
+	
 		return "OjectID: " + objectID + 
+				", Primary Name: " + primaryName + 
 				", CartoCode: " + cartoCode + 
 				", County: " + county +
 				", Created Date: " + CreatedDateString +
