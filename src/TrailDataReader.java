@@ -133,7 +133,7 @@ public class TrailDataReader {
 			}
 		}
 		
-		//Challenge 7: Delete the  20 trails from table, then checks size
+		//Challenge 6: Delete the  20 trails from table, then checks size
 		System.out.println("\nCurrent size of table: " + symbolTable.size());
 		
 		for(int x = 0; x < 20; x++) {
@@ -142,11 +142,11 @@ public class TrailDataReader {
 		
 		System.out.println("After deleting the top 20 keys: " + symbolTable.size());
 		
-		//Challenge 8: Prints which trail has the highest key (max).
+		//Challenge 7: Prints which trail has the highest key (max).
 		Integer max = symbolTable.max();
 		System.out.println("\nMax key's trail information:\n" + symbolTable.get(max));
 		
-		//Challenge 9: Removes current lowest key (min), then prints new lowest key 
+		//Challenge 8: Removes current lowest key (min), then prints new lowest key 
 		Integer low = symbolTable.min();
 		System.out.println("\nDeleting current minimum key: " + low);
 		symbolTable.delete(low);
