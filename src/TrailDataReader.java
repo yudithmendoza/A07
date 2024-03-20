@@ -113,8 +113,46 @@ public class TrailDataReader {
 		TrailPathData newTrail = new TrailPathData(41728, "New Trail", "4- Road-concurrent", "Salt Lake", new Date(124, 2, 19), new Date(124, 2, 19), 100.0); 
 		symbolTable.put(newTrail.getObjectID(), newTrail);
 		System.out.println("\nNew trail added: \n" + newTrail); 
-		System.out.println(); 		
+		System.out.println();
+
+		//Challenge 5: Delete the 5 keys greater than 400, then checks to make sure elements are gone.
+		int num = 401;
+		for(int x = 0; x < 5; x++) {
+			Integer toDelete = symbolTable.ceiling(num);
+			System.out.println("Deleting trail with key: " + toDelete);
+			symbolTable.delete(toDelete);
+		}
+		System.out.println();
+		for(int x = 400; x < 407; x++) {
+			if(symbolTable.contains(x)) { //checking with contains()
+				System.out.println("Key " + x + " exists. " + "Trail is " + symbolTable.get(x).getPrimaryName() + 
+						" in " + symbolTable.get(x).getCounty());
+			}
+			else {
+				System.out.println("Key " + x + " does not exist in table");
+			}
+		}
 		
+		//Challenge 7: Delete the  20 trails from table, then checks size
+		System.out.println("\nCurrent size of table: " + symbolTable.size());
+		
+		for(int x = 0; x < 20; x++) {
+			symbolTable.delete(symbolTable.max());
+		}
+		
+		System.out.println("After deleting the top 20 keys: " + symbolTable.size());
+		
+		//Challenge 8: Prints which trail has the highest key (max).
+		Integer max = symbolTable.max();
+		System.out.println("\nMax key's trail information:\n" + symbolTable.get(max));
+		
+		//Challenge 9: Removes current lowest key (min), then prints new lowest key 
+		Integer low = symbolTable.min();
+		System.out.println("\nDeleting current minimum key: " + low);
+		symbolTable.delete(low);
+		low = symbolTable.min(); // new min
+		System.out.println("New minimum key: " + low);
+
 		//Displays updated list
 //		System.out.println("\nUpdate list of trails: ");
 //		for (Integer trailID : symbolTable.keys()) {
